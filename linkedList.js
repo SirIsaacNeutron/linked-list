@@ -72,6 +72,30 @@ export class LinkedList {
         return oldHead
     }
 
+    contains = value => {
+        let currentNode = this.head
+        while (currentNode !== null) {
+            if (currentNode.value === value) {
+                return true
+            }
+            currentNode = currentNode.next
+        }
+        return false
+    }
+
+    find = value => {
+        let currentNode = this.head
+        let currentIndex = 0
+        while (currentNode != null) {
+            if (currentNode.value === value) {
+                return currentIndex
+            }
+            currentNode = currentNode.next
+            ++currentIndex
+        }
+        return null
+    }
+
     size = () => {
         return this.length
     }

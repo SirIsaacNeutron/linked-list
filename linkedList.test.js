@@ -82,3 +82,31 @@ test("popping elements", () => {
     expect(list.toString()).toEqual("( 1 ) -> null")
     expect(list.size()).toEqual(1)
 })
+
+test("contains() elements", () => {
+    const list = new LinkedList()
+
+    expect(list.contains(0)).toEqual(false)
+    
+    list.append(1)
+
+    expect(list.contains(1)).toEqual(true)
+    expect(list.contains(2)).toEqual(false)
+
+    list.prepend(2)
+    expect(list.contains(2)).toEqual(true)
+    expect(list.contains(1)).toEqual(true)
+})
+
+test("finding elements", () => {
+    const list = new LinkedList()
+
+    expect(list.find(1)).toEqual(null)
+    
+    list.append(1)
+    expect(list.find(1)).toEqual(0)
+
+    list.prepend(0)
+    expect(list.find(1)).toEqual(1)
+    expect(list.find(0)).toEqual(0)
+})
