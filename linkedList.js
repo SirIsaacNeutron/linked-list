@@ -58,11 +58,16 @@ export class LinkedList {
             // If the next node is the last node
             if (nextNode.next === null) {
                 currentNode.next = null
+                --this.length
                 return nextNode
             }
             currentNode = nextNode
         }
         const oldHead = this.head
+
+        if (this.head !== null) {
+            --this.length
+        }
         this.head = null
         return oldHead
     }

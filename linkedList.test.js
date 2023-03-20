@@ -67,15 +67,18 @@ test("popping elements", () => {
 
     expect(list.pop()).toEqual(null)
     expect(list.toString()).toEqual("null")
+    expect(list.size()).toEqual(0)
 
     list.prepend(1)
 
     expect(list.pop().value).toEqual(1)
     expect(list.toString()).toEqual("null")
+    expect(list.size()).toEqual(0)
 
     list.append(1)
     list.append(2)
 
     expect(list.pop().value).toEqual(2)
     expect(list.toString()).toEqual("( 1 ) -> null")
+    expect(list.size()).toEqual(1)
 })
