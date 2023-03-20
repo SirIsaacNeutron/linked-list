@@ -53,7 +53,7 @@ export class LinkedList {
     
     pop = () => {
         let currentNode = this.head
-        while (currentNode.next !== null) {
+        while (this.head !== null && currentNode.next !== null) {
             const nextNode = currentNode.next
             // If the next node is the last node
             if (nextNode.next === null) {

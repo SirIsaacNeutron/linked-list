@@ -65,6 +65,9 @@ test("using at() to access elements", () => {
 test("popping elements", () => {
     const list = new LinkedList()
 
+    expect(list.pop()).toEqual(null)
+    expect(list.toString()).toEqual("null")
+
     list.prepend(1)
 
     expect(list.pop().value).toEqual(1)
